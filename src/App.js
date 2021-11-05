@@ -1,7 +1,9 @@
 import { ChatEngine } from 'react-chat-engine';
-
-import ChatFeed from './components/ChatFeed';
+import ChatCard from './components/ChatCard';
+import ChatList from './components/ChatList';
+import ChatForm from './components/ChatForm';
 import LoginForm from './components/LoginForm';
+import PeopleSettings from './components/PeopleSettings';
 import './App.css';
 
 const projectID = 'c34ac969-a14d-4730-a5e1-7c758be438ba';
@@ -22,11 +24,15 @@ const App = () => {
         </button>
       </div>
       <ChatEngine
-        height="90vh"
+        height="88vh"
         projectID={projectID}
         userName={localStorage.getItem('username')}
         userSecret={localStorage.getItem('password')}
-        renderChatFeed={(chatAppProps) => <ChatFeed {...chatAppProps} />}
+        // renderChatFeed={(chatAppProps) => <ChatFeed {...chatAppProps} />}
+        renderChatCard={(chat, index) => <ChatCard {...(chat, index)} />}
+        renderChatList={(chatAppState) => <ChatList {...chatAppState} />}
+        renderNewChatForm={(creds) => <ChatForm {...creds} />}
+        renderChatSettings={(chat) => <PeopleSettings {...chat} />}
         onNewMessage={() => new Audio('https://chat-engine-assets.s3.amazonaws.com/click.mp3').play()}
       />
     </>

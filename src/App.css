@@ -6,6 +6,43 @@
   letter-spacing: 0.5px;
 }
 
+.card{
+  border: 1px solid #e4e4e4;
+  background-color: white;
+  margin: 20px;
+  height:80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+
+.card:hover{
+  transform: scale(1.02);
+  -webkit-transform: scale(1.02);
+  -moz-transform: scale(1.02);
+  -ms-transform: scale(1.02);
+  -o-transform: scale(1.02);
+}
+
+.content{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-content{
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
 .disconnect-button{
   padding: 10px;
   background-color: 	#EE4B2B;
@@ -65,9 +102,24 @@
   background: transparent; /* Optional: just make scrollbar invisible */
 }
 
+.chat-list{
+  height: 95%;
+  overflow: scroll;
+  background-color: white;
+  margin: 20px;
+  border: 1px solid #d4d4d4;
+  border-radius: 15px;
+  box-shadow: 10px;
+  box-shadow: #d4d4d4 0px 3px 5px;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  -ms-border-radius: 15px;
+  -o-border-radius: 15px;
+}
 /* CUSTOM FEED */
 
 .chat-feed {
+  border-left: 1px solid #d4d4d4;
   height: 100%;
   width: 100%;
   overflow: scroll;
@@ -219,6 +271,51 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.chat-input{
+  border: 1px solid #d4d4d4;
+  padding: 5px;
+  transition: all 0.3s;
+  outline: none;
+  border-radius: 0.2rem;
+  width: '300px';
+  margin: 0 auto;
+
+}
+
+.finalizar{
+  border: 1px solid red;
+  outline: none;
+  padding: 5px;
+  background-color: #ed2939;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 150px;
+  font-size: 20px;
+}
+
+.finalizar:hover{
+  opacity: 0.8;
+}
+
+.chat-info{
+  width: 100%;
+  height:'600px';
+  background-color: #d4d4d4;
+  margin-top: 30px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  border-radius: 15px;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  -ms-border-radius: 15px;
+  -o-border-radius: 15px;
+}
+
+.chat-info-title{
+  font-weight: 'bold';
 }
 
 .input {

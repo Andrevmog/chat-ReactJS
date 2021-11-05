@@ -1,10 +1,12 @@
+import React, { useContext } from 'react';
+import { ChatEngineContext } from 'react-chat-engine';
 import MyMessage from './MyMessage';
 import TheirMessage from './TheirMessage';
 import MessageForm from './MessageForm';
 
 const ChatFeed = (props) => {
-  const { chats, activeChat, userName, messages } = props;
-
+  const { chats, userName, messages } = props;
+  const { activeChat } = useContext(ChatEngineContext);
   const chat = chats && chats[activeChat];
 
   const renderReadReceipts = (message, isMyMessage) => chat.people.map((person, index) => person.last_read === message.id && (
@@ -20,7 +22,6 @@ const ChatFeed = (props) => {
 
   const renderMessages = () => {
     const keys = Object.keys(messages);
-
     return keys.map((key, index) => {
       const message = messages[key];
       const lastMessageKey = index === 0 ? null : keys[index - 1];
@@ -58,7 +59,6 @@ const ChatFeed = (props) => {
         </div>
       </div>
       {renderMessages()}
-      <div style={{ height: '60px' }} />
       <div className="message-form-container">
         <MessageForm {...props} chatId={activeChat} />
       </div>
